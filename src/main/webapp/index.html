@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>伟大的毛主席万岁</title>
+		<link rel="icon" href="images/love.ico" type="image/x-icon"/>
+		<link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+		<style>			
+			html,
+			body,
+			.container {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background:url(images/bg.png) ;
+				background-size:100%;
+				overflow: hidden;
+				position: relative;
+			}
+			.container1{
+				-webkit-perspective: 2300px;
+				        perspective: 2300px;
+			}
+			.container2{
+				-webkit-perspective: 600px;
+				        perspective: 600px;
+			}
+			.love {
+				position: absolute;
+				top: 0;
+				left: -850px;
+				height:100px;
+				color: pink;
+				font-weight:bolder;
+				font-size: 28px;
+				-webkit-animation:love 35s linear infinite;
+				        animation:love 35s linear infinite;
+				line-height:100px;		
+			}
+			.love img{
+				border-radius: 50%;
+				border:2px solid pink;
+				cursor: pointer;
+			}
+			#love1,#love3{float:left;width:100px;height:100px;margin-top:10px;}
+			#love2{float:left;height: 100px;line-height: 40px;width:800px;text-align: center;}						
+			.boxs {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 200px;
+				height: 200px;
+				margin-top: -100px;
+				margin-left: -100px;
+				-webkit-transform-style: preserve-3d;
+				        transform-style: preserve-3d;
+			}
+			
+			img {
+				display: block;
+				width: 200px;				
+				height: 200px;
+				-webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
+				-webkit-box-shadow: 0px 0px 20px #FFF;
+				        box-shadow: 0px 0px 20px #FFF;
+			}
+			.boxs1{
+				top: 65%;
+				-webkit-animation: myRotate1 40s linear infinite;
+				        animation: myRotate1 40s linear infinite;
+			}
+			.boxs2{
+				top: 50%;
+				-webkit-animation: myRotate2 40s linear infinite;
+				        animation: myRotate2 40s linear infinite;
+			}
+			 .box {
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				border: 1px solid #fff;
+				border-radius: 8px;
+			}
+			.boxs1 .box1 {
+				-webkit-transform: rotateY(0deg) translateZ(600px);
+				        transform: rotateY(0deg) translateZ(600px);
+			}
+			
+			.boxs1 .box2 {
+				-webkit-transform: rotateY(24deg) translateZ(600px);
+				        transform: rotateY(24deg) translateZ(600px);
+			}
+			
+			.boxs1 .box3 {
+				-webkit-transform: rotateY(48deg) translateZ(600px);
+				        transform: rotateY(48deg) translateZ(600px);
+			}
+			
+			.boxs1 .box4 {
+				-webkit-transform: rotateY(72deg) translateZ(600px);
+				        transform: rotateY(72deg) translateZ(600px);
+			}
+			
+			.boxs1 .box5 {
+				-webkit-transform: rotateY(96deg) translateZ(600px);
+				        transform: rotateY(96deg) translateZ(600px);
+			}
+			
+			.boxs1 .box6 {
+				-webkit-transform: rotateY(120deg) translateZ(600px);
+				        transform: rotateY(120deg) translateZ(600px);
+			}
+			.boxs1 .box7 {
+				-webkit-transform: rotateY(144deg) translateZ(600px);
+				        transform: rotateY(144deg) translateZ(600px);
+			}
+			
+			.boxs1 .box8 {
+				-webkit-transform: rotateY(168deg) translateZ(600px);
+				        transform: rotateY(168deg) translateZ(600px);
+			}
+			
+			.boxs1 .box9 {
+				-webkit-transform: rotateY(192deg) translateZ(600px);
+				        transform: rotateY(192deg) translateZ(600px);
+			}
+			
+			.boxs1 .box10 {
+				-webkit-transform: rotateY(216deg) translateZ(600px);
+				        transform: rotateY(216deg) translateZ(600px);
+			}
+			.boxs1 .box11 {
+				-webkit-transform: rotateY(240deg) translateZ(600px);
+				        transform: rotateY(240deg) translateZ(600px);
+			}
+			
+			.boxs1 .box12 {
+				-webkit-transform: rotateY(264deg) translateZ(600px);
+				        transform: rotateY(264deg) translateZ(600px);
+			}
+			
+			.boxs1 .box13 {
+				-webkit-transform: rotateY(288deg) translateZ(600px);
+				        transform: rotateY(288deg) translateZ(600px);
+			}
+			
+			.boxs1 .box14 {
+				-webkit-transform: rotateY(312deg) translateZ(600px);
+				        transform: rotateY(312deg) translateZ(600px);
+			}
+			
+			.boxs1 .box15 {
+				-webkit-transform: rotateY(336deg) translateZ(600px);
+				        transform: rotateY(336deg) translateZ(600px);
+			}
+			.boxs2 .box1 {
+				-webkit-transform: rotateY(0deg) translateZ(600px);
+				        transform: rotateY(0deg) translateZ(600px);
+			}
+			
+			.boxs2 .box2 {
+				-webkit-transform: rotateY(-24deg) translateZ(600px);
+				        transform: rotateY(-24deg) translateZ(600px);
+			}
+			
+			.boxs2 .box3 {
+				-webkit-transform: rotateY(-48deg) translateZ(600px);
+				        transform: rotateY(-48deg) translateZ(600px);
+			}
+			
+			.boxs2 .box4 {
+				-webkit-transform: rotateY(-72deg) translateZ(600px);
+				        transform: rotateY(-72deg) translateZ(600px);
+			}
+			
+			.boxs2 .box5 {
+				-webkit-transform: rotateY(-96deg) translateZ(600px);
+				        transform: rotateY(-96deg) translateZ(600px);
+			}
+			
+			.boxs2 .box6 {
+				-webkit-transform: rotateY(-120deg) translateZ(600px);
+				        transform: rotateY(-120deg) translateZ(600px);
+			}
+			.boxs2 .box7 {
+				-webkit-transform: rotateY(-144deg) translateZ(600px);
+				        transform: rotateY(-144deg) translateZ(600px);
+			}
+			
+			.boxs2 .box8 {
+				-webkit-transform: rotateY(-168deg) translateZ(600px);
+				        transform: rotateY(-168deg) translateZ(600px);
+			}
+			
+			.boxs2 .box9 {
+				-webkit-transform: rotateY(-192deg) translateZ(600px);
+				        transform: rotateY(-192deg) translateZ(600px);
+			}
+			
+			.boxs2 .box10 {
+				-webkit-transform: rotateY(-216deg) translateZ(600px);
+				        transform: rotateY(-216deg) translateZ(600px);
+			}
+			.boxs2 .box11 {
+				-webkit-transform: rotateY(-240deg) translateZ(600px);
+				        transform: rotateY(-240deg) translateZ(600px);
+			}
+			
+			.boxs2 .box12 {
+				-webkit-transform: rotateY(-264deg) translateZ(600px);
+				        transform: rotateY(-264deg) translateZ(600px);
+			}
+			
+			.boxs2 .box13 {
+				-webkit-transform: rotateY(-288deg) translateZ(600px);
+				        transform: rotateY(-288deg) translateZ(600px);
+			}
+			
+			.boxs2 .box14 {
+				-webkit-transform: rotateY(-312deg) translateZ(600px);
+				        transform: rotateY(-312deg) translateZ(600px);
+			}
+			
+			.boxs2 .box15 {
+				-webkit-transform: rotateY(-336deg) translateZ(600px);
+				        transform: rotateY(-336deg) translateZ(600px);
+			}
+			@-webkit-keyframes love {
+				from {
+					-webkit-transform: translateX(2400px) ;
+					        transform: translateX(2400px) ;
+				}
+				to {
+					-webkit-transform: translateX(-300px);
+					        transform: translateX(-300px);
+				}
+			}
+			@keyframes love {
+				from {
+					-webkit-transform: translateX(2400px) ;
+					        transform: translateX(2400px) ;
+				}
+				to {
+					-webkit-transform: translateX(-300px);
+					        transform: translateX(-300px);
+				}
+			}			
+			@-webkit-keyframes myRotate1 {
+				from {
+					-webkit-transform: rotateX(16deg) rotateY(0deg);
+					        transform: rotateX(16deg) rotateY(0deg);
+				}
+				to {
+					-webkit-transform: rotateX(16deg) rotateY(360deg);
+					        transform: rotateX(16deg) rotateY(360deg);
+				}
+			}			
+			@keyframes myRotate1 {
+				from {
+					-webkit-transform: rotateX(16deg) rotateY(0deg);
+					        transform: rotateX(16deg) rotateY(0deg);
+				}
+				to {
+					-webkit-transform: rotateX(16deg) rotateY(360deg);
+					        transform: rotateX(16deg) rotateY(360deg);
+				}
+			}
+			@-webkit-keyframes myRotate2 {
+				from {
+					-webkit-transform: rotateX(20deg) rotateY(0deg);
+					        transform: rotateX(20deg) rotateY(0deg);
+				}
+				to {
+					-webkit-transform: rotateX(20deg) rotateY(360deg);
+					        transform: rotateX(20deg) rotateY(360deg);
+				}
+			}
+			@keyframes myRotate2 {
+				from {
+					-webkit-transform: rotateX(20deg) rotateY(0deg);
+					        transform: rotateX(20deg) rotateY(0deg);
+				}
+				to {
+					-webkit-transform: rotateX(20deg) rotateY(360deg);
+					        transform: rotateX(20deg) rotateY(360deg);
+				}
+			}	
+		</style>
+	</head>
+
+	<body>
+		<div class="container container1">
+			<div class="love" id="love">
+				<img id="love1" src="images/bir.gif"/>
+				<p id="love2">&nbsp;伟大的领袖!伟大的导师!伟大的舵手!毛主席万岁！！！&nbsp;</p>
+				<img id="love3" src="images/bir.gif"/>
+			</div>
+			<div class="boxs boxs1">
+				<a href="#" ><img class="box box1" src="images/1.jpg" /></a>
+				<a href="#" ><img class="box box2" src="images/2.jpg" /></a>
+				<a href="#" ><img class="box box3" src="images/3.jpg" /></a>
+				<a href="#" ><img class="box box4" src="images/4.jpg" /></a>
+				<a href="#" ><img class="box box5" src="images/5.jpg" /></a>
+				<a href="#" ><img class="box box6" src="images/6.jpg" /></a>
+				<a href="#" ><img class="box box7" src="images/7.png" /></a>
+				<a href="#" ><img class="box box8" src="images/8.jpg" /></a>
+				<a href="#" ><img class="box box9" src="images/9.jpg" /></a>
+				<a href="#" ><img class="box box10" src="images/10.jpg" /></a>
+				<a href="#" ><img class="box box11" src="images/11.jpg" /></a>
+				<a href="#" ><img class="box box12" src="images/12.jpg" /></a>
+				<a href="#" ><img class="box box13" src="images/13.jpg" /></a>
+				<a href="#" ><img class="box box14" src="images/14.jpg" /></a>
+				<a href="#" ><img class="box box15" src="images/15.jpg" /></a>		
+			</div>	
+		</div>
+		<div style="display: none">毛主席万岁</div>
+		<audio src="images/bgMusic.mp3" autoplay loop id="love4">	
+		</audio>
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  	<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+		$(function(){
+			$("#love1").click(function(){
+				$(".container").removeClass("container1").addClass('container2',2000, "easeInOutCubic");
+				$(".container .boxs").addClass('boxs2').removeClass("boxs1");
+				$("#love2").text("伟大的领袖!伟大的导师!伟大的舵手!毛主席万岁！！！");
+				$("#love4").attr('src','images/bgMusic2.mp3');
+				$(".container").css("background-image","url(images/bg2.jpg)");
+			});
+			$("#love3").click(function(){
+				$(".container").removeClass("container2").addClass("container1",1600,"easeInOutBounce");
+				$(".container .boxs").addClass('boxs1').removeClass("boxs2");
+				$("#love2").text("伟大的领袖!伟大的导师!伟大的舵手!毛主席万岁！！！");
+				$("#love4").attr('src','images/bgMusic.mp3');
+				$(".container").css("background-image","url(images/bg.png)");
+			})
+		})
+	</script>
+</html>
